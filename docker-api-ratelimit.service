@@ -1,0 +1,12 @@
+# /etc/systemd/system/docker-api-ratelimit.service
+[Unit]
+Description=Prometheus Exporter for Docker API ratelimit check
+Documentation=None
+After=network-online.target
+[Service]
+User=root
+Restart=on-failure
+ExecStart=/user/local/bin/DockerAPIRateLimit.py
+[Install]
+WantedBy=multi-user.target
+
